@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Canvas.h
 //  demo
 //
 //  Created by 张 玺 on 13-3-29.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+ZXQuartz.h"
 
-@interface ViewController : UIViewController
+@interface Canvas : UIView
 
 @end
