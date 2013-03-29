@@ -4,6 +4,8 @@ ZXQuartz
 ZXQuartz
 
 
+![screen](http://zxapi.sinaapp.com/image_library/quartz.jpg)
+
 ``` objective-c
 //矩形
 -(void)drawRectangle:(CGRect)rect;
