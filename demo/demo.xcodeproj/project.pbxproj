@@ -16,9 +16,8 @@
 		435A19C017054B5200BD24F8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 435A19BF17054B5200BD24F8 /* Default.png */; };
 		435A19C217054B5200BD24F8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 435A19C117054B5200BD24F8 /* Default@2x.png */; };
 		435A19C417054B5200BD24F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 435A19C317054B5200BD24F8 /* Default-568h@2x.png */; };
-		435A19C717054B5200BD24F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435A19C617054B5200BD24F8 /* ViewController.m */; };
-		435A19CA17054B5200BD24F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A19C817054B5200BD24F8 /* ViewController.xib */; };
 		435A19D317054B6C00BD24F8 /* UIView+ZXQuartz.m in Sources */ = {isa = PBXBuildFile; fileRef = 435A19D217054B6C00BD24F8 /* UIView+ZXQuartz.m */; };
+		435A19D61705629400BD24F8 /* Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 435A19D51705629400BD24F8 /* Canvas.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +34,10 @@
 		435A19BF17054B5200BD24F8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		435A19C117054B5200BD24F8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		435A19C317054B5200BD24F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		435A19C517054B5200BD24F8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		435A19C617054B5200BD24F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		435A19C917054B5200BD24F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		435A19D117054B6C00BD24F8 /* UIView+ZXQuartz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZXQuartz.h"; sourceTree = "<group>"; };
 		435A19D217054B6C00BD24F8 /* UIView+ZXQuartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZXQuartz.m"; sourceTree = "<group>"; };
+		435A19D41705629400BD24F8 /* Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
+		435A19D51705629400BD24F8 /* Canvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +87,8 @@
 				435A19D017054B6C00BD24F8 /* ZXQuartz */,
 				435A19BC17054B5200BD24F8 /* AppDelegate.h */,
 				435A19BD17054B5200BD24F8 /* AppDelegate.m */,
-				435A19C517054B5200BD24F8 /* ViewController.h */,
-				435A19C617054B5200BD24F8 /* ViewController.m */,
-				435A19C817054B5200BD24F8 /* ViewController.xib */,
+				435A19D41705629400BD24F8 /* Canvas.h */,
+				435A19D51705629400BD24F8 /* Canvas.m */,
 				435A19B417054B5200BD24F8 /* Supporting Files */,
 			);
 			path = demo;
@@ -176,7 +173,6 @@
 				435A19C017054B5200BD24F8 /* Default.png in Resources */,
 				435A19C217054B5200BD24F8 /* Default@2x.png in Resources */,
 				435A19C417054B5200BD24F8 /* Default-568h@2x.png in Resources */,
-				435A19CA17054B5200BD24F8 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +185,8 @@
 			files = (
 				435A19BA17054B5200BD24F8 /* main.m in Sources */,
 				435A19BE17054B5200BD24F8 /* AppDelegate.m in Sources */,
-				435A19C717054B5200BD24F8 /* ViewController.m in Sources */,
 				435A19D317054B6C00BD24F8 /* UIView+ZXQuartz.m in Sources */,
+				435A19D61705629400BD24F8 /* Canvas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,14 +199,6 @@
 				435A19B717054B5200BD24F8 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		435A19C817054B5200BD24F8 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				435A19C917054B5200BD24F8 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

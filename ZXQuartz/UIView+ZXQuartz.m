@@ -6,9 +6,111 @@
 //  Copyright (c) 2012年 张玺. All rights reserved.
 //
 
+#define PI 3.1415926
+
 #import "UIView+ZXQuartz.h"
 
 @implementation UIView (ZXQuartz)
+
+
+//矩形
+-(void)drawRectangle:(CGRect)rect
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+
+    CGMutablePathRef pathRef = [self pathwithFrame:rect withRadius:0];
+        
+    CGContextAddPath(context, pathRef);
+    CGContextDrawPath(context,kCGPathFillStroke);
+
+    CGPathRelease(pathRef);
+}
+//圆角矩形
+-(void)drawRectangle:(CGRect)rect withRadius:(float)radius
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    CGMutablePathRef pathRef = [self pathwithFrame:rect withRadius:radius];
+    
+    CGContextAddPath(context, pathRef);
+    CGContextDrawPath(context,kCGPathFillStroke);
+    
+    CGPathRelease(pathRef);
+}
+//圆形
+-(void)drawCircleWithCenter:(CGPoint)center
+                     radius:(float)radius
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    CGMutablePathRef pathRef = CGPathCreateMutable();
+    
+    CGPathAddArc(pathRef,
+                 &CGAffineTransformIdentity,
+                 center.x,
+                 center.y,
+                 radius,
+                 -PI/2,
+                 radius*2*PI-PI/2,
+                 NO);
+    CGPathCloseSubpath(pathRef);
+    
+    CGContextAddPath(context, pathRef);
+    CGContextDrawPath(context,kCGPathFillStroke);
+    
+    CGPathRelease(pathRef);
+
+}
+//曲线
+-(void)drawCurveFrom:(CGPoint)startPoint
+                  to:(CGPoint)endPoint
+       controlPoint1:(CGPoint)controlPoint1
+       controlPoint2:(CGPoint)controlPoint2
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
+    CGContextAddCurveToPoint(context,
+                             controlPoint1.x,
+                             controlPoint1.y,
+                             controlPoint2.x,
+                             controlPoint2.y,
+                             endPoint.x,
+                             endPoint.y);
+    
+    CGContextDrawPath(context,kCGPathStroke);
+}
+//弧线
+-(void)drawArcFromCenter:(CGPoint)center
+                  radius:(float)radius
+              startAngle:(float)startAngle
+                endAngle:(float)endAngle
+               clockwise:(BOOL)clockwise
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+
+    CGContextAddArc(context,
+                    center.x,
+                    center.y,
+                    radius,
+                    startAngle,
+                    endAngle,
+                    clockwise?0:1);
+    
+    CGContextDrawPath(context,kCGPathStroke);
+}
+//直线
+-(void)drawLineFrom:(CGPoint)startPoint
+                 to:(CGPoint)endPoint
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
+    CGContextAddLineToPoint(context, endPoint.x,endPoint.y);
+    
+    CGContextDrawPath(context,kCGPathStroke);
+}
+
 
 -(CGMutablePathRef)pathwithFrame:(CGRect)frame withRadius:(float)radius
 {
@@ -61,8 +163,8 @@
     
     CGPathCloseSubpath(pathRef);
     
-    [[UIColor whiteColor] setFill];
-    [[UIColor blackColor] setStroke];
+    //[[UIColor whiteColor] setFill];
+    //[[UIColor blackColor] setStroke];
     
     return pathRef;
 }
