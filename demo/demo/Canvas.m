@@ -32,7 +32,10 @@
                                      green:1
                                       blue:1
                                      alpha:1];
-    
+    UIColor *green = [UIColor colorWithRed:41.f/255.f
+                                     green:199.f/255.f
+                                      blue:165.f/255.f
+                                     alpha:1];
     [blue setStroke];//设置线条颜色
     [white setFill]; //设置填充颜色
     
@@ -41,6 +44,20 @@
     
     //画圆角矩形
     [self drawRectangle:CGRectMake(15, 15, 290, 290) withRadius:10];
+    
+    //画多边形
+    [green setFill];
+    NSArray *points= @[[NSValue valueWithCGPoint:CGPointMake(70, 30)],
+                       [NSValue valueWithCGPoint:CGPointMake(80, 70)],
+                       [NSValue valueWithCGPoint:CGPointMake(120, 80)],
+                       [NSValue valueWithCGPoint:CGPointMake(80, 90)],
+                       [NSValue valueWithCGPoint:CGPointMake(70, 130)],
+                       [NSValue valueWithCGPoint:CGPointMake(60, 90)],
+                       [NSValue valueWithCGPoint:CGPointMake(20, 80)],
+                       [NSValue valueWithCGPoint:CGPointMake(60, 70)],
+                       [NSValue valueWithCGPoint:CGPointMake(70, 30)]];
+    [self drawPolygon:points];
+    [white setFill];
     
     //画波浪线
     [self drawCurveFrom:CGPointMake(120, 50)

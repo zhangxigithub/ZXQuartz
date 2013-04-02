@@ -37,6 +37,28 @@
     
     CGPathRelease(pathRef);
 }
+//多边形
+-(void)drawPolygon:(NSArray *)pointArray
+{
+    NSAssert(pointArray.count>=2,@"数组长度必须大于等于2");
+    NSAssert([[pointArray[0] class] isSubclassOfClass:[NSValue class]], @"数组成员必须是CGPoint组成的NSValue");
+    
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    NSValue *startPointValue = pointArray[0];
+    CGPoint  startPoint      = [startPointValue CGPointValue];
+    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
+    
+    for(int i = 1;i<pointArray.count;i++)
+    {
+        NSAssert([[pointArray[i] class] isSubclassOfClass:[NSValue class]], @"数组成员必须是CGPoint组成的NSValue");
+        NSValue *pointValue = pointArray[i];
+        CGPoint  point      = [pointValue CGPointValue];
+        CGContextAddLineToPoint(context, point.x,point.y);
+    }
+    
+    CGContextDrawPath(context, kCGPathFillStroke);
+}
 //圆形
 -(void)drawCircleWithCenter:(CGPoint)center
                      radius:(float)radius

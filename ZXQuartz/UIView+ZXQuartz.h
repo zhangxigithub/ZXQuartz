@@ -17,7 +17,9 @@
 -(void)drawRectangle:(CGRect)rect;
 //圆角矩形
 -(void)drawRectangle:(CGRect)rect withRadius:(float)radius;
-
+//画多边形
+//pointArray = @[[NSValue valueWithCGPoint:CGPointMake(200, 400)]];
+-(void)drawPolygon:(NSArray *)pointArray;
 //圆形
 -(void)drawCircleWithCenter:(CGPoint)center
                      radius:(float)radius;
