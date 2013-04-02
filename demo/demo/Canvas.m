@@ -15,7 +15,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -76,6 +76,41 @@
                     to:CGPointMake(200, 265)];
     [self drawLineFrom:CGPointMake(130, 270)
                     to:CGPointMake(190, 270)];
+    
+    //画扇形
+    [[UIColor redColor] setFill];
+    [self drawSectorFromCenter:CGPointMake(62, 398)
+                        radius:30
+                    startAngle:-3.14/2
+                      endAngle:0
+                     clockwise:YES];
+    [[UIColor greenColor] setFill];
+    [self drawSectorFromCenter:CGPointMake(62, 402)
+                        radius:30
+                    startAngle:0
+                      endAngle:3.14/2
+                     clockwise:YES];
+    [[UIColor purpleColor] setFill];
+    [self drawSectorFromCenter:CGPointMake(58, 402)
+                        radius:30
+                    startAngle:3.14/2
+                      endAngle:3.14
+                     clockwise:YES];
+    [[UIColor blueColor] setFill];
+    [self drawSectorFromCenter:CGPointMake(58, 398)
+                        radius:30
+                    startAngle:3.14
+                      endAngle:-3.14/2
+                     clockwise:YES];
+    [white setFill];
+    //画折线
+    NSArray *lines = @[[NSValue valueWithCGPoint:CGPointMake(200, 400)],
+                       [NSValue valueWithCGPoint:CGPointMake(220, 380)],
+                       [NSValue valueWithCGPoint:CGPointMake(240, 410)],
+                       [NSValue valueWithCGPoint:CGPointMake(260, 350)],
+                       [NSValue valueWithCGPoint:CGPointMake(280, 410)],
+                       [NSValue valueWithCGPoint:CGPointMake(300, 390)]];
+    [self drawLines:lines];
 }
 
 

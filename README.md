@@ -27,9 +27,21 @@ ZXQuartz
               startAngle:(float)startAngle
                 endAngle:(float)endAngle
                clockwise:(BOOL)clockwise;
+//扇形
+-(void)drawSectorFromCenter:(CGPoint)center
+                     radius:(float)radius
+                 startAngle:(float)startAngle
+                   endAngle:(float)endAngle
+                  clockwise:(BOOL)clockwise;
 
 //直线
 -(void)drawLineFrom:(CGPoint)startPoint
                  to:(CGPoint)endPoint;
+
+/*
+折线，连续直线
+pointArray = @[[NSValue valueWithCGPoint:CGPointMake(200, 400)]];
+ */
+-(void)drawLines:(NSArray *)pointArray;
 
 ```

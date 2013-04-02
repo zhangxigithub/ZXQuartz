@@ -97,8 +97,32 @@
                     endAngle,
                     clockwise?0:1);
     
-    CGContextDrawPath(context,kCGPathStroke);
+    CGContextStrokePath(context);
 }
+//扇形
+-(void)drawSectorFromCenter:(CGPoint)center
+                     radius:(float)radius
+                 startAngle:(float)startAngle
+                   endAngle:(float)endAngle
+                  clockwise:(BOOL)clockwise
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    
+    CGContextMoveToPoint(context, center.x, center.y);
+    
+    CGContextAddArc(context,
+                    center.x,
+                    center.y,
+                    radius,
+                    startAngle,
+                    endAngle,
+                    clockwise?0:1);
+    CGContextClosePath(context);
+    CGContextDrawPath(context,kCGPathFillStroke);
+}
+
+
 //直线
 -(void)drawLineFrom:(CGPoint)startPoint
                  to:(CGPoint)endPoint
@@ -108,9 +132,29 @@
     CGContextMoveToPoint(context, startPoint.x, startPoint.y);
     CGContextAddLineToPoint(context, endPoint.x,endPoint.y);
     
-    CGContextDrawPath(context,kCGPathStroke);
+    CGContextStrokePath(context);
 }
-
+-(void)drawLines:(NSArray *)pointArray
+{
+    NSAssert(pointArray.count>=2,@"数组长度必须大于等于2");
+    NSAssert([[pointArray[0] class] isSubclassOfClass:[NSValue class]], @"数组成员必须是CGPoint组成的NSValue");
+    
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    NSValue *startPointValue = pointArray[0];
+    CGPoint  startPoint      = [startPointValue CGPointValue];
+    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
+    
+    for(int i = 1;i<pointArray.count;i++)
+    {
+         NSAssert([[pointArray[i] class] isSubclassOfClass:[NSValue class]], @"数组成员必须是CGPoint组成的NSValue");
+         NSValue *pointValue = pointArray[i];
+         CGPoint  point      = [pointValue CGPointValue];
+         CGContextAddLineToPoint(context, point.x,point.y);
+    }
+    
+    CGContextStrokePath(context);
+}
 
 -(CGMutablePathRef)pathwithFrame:(CGRect)frame withRadius:(float)radius
 {
