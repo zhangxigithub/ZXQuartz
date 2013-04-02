@@ -78,31 +78,32 @@
                     to:CGPointMake(190, 270)];
     
     //画扇形
-    [[UIColor redColor] setFill];
-    [self drawSectorFromCenter:CGPointMake(62, 398)
+    [[UIColor grayColor] setStroke];
+    [white setFill];
+    [self drawSectorFromCenter:CGPointMake(60, 400)
                         radius:30
                     startAngle:-3.14/2
                       endAngle:0
                      clockwise:YES];
-    [[UIColor greenColor] setFill];
-    [self drawSectorFromCenter:CGPointMake(62, 402)
+    [blue setFill];
+    [self drawSectorFromCenter:CGPointMake(60, 400)
                         radius:30
                     startAngle:0
                       endAngle:3.14/2
                      clockwise:YES];
-    [[UIColor purpleColor] setFill];
-    [self drawSectorFromCenter:CGPointMake(58, 402)
+    [white setFill];
+    [self drawSectorFromCenter:CGPointMake(60, 400)
                         radius:30
                     startAngle:3.14/2
                       endAngle:3.14
                      clockwise:YES];
-    [[UIColor blueColor] setFill];
-    [self drawSectorFromCenter:CGPointMake(58, 398)
+    [blue setFill];
+    [self drawSectorFromCenter:CGPointMake(60, 400)
                         radius:30
                     startAngle:3.14
                       endAngle:-3.14/2
                      clockwise:YES];
-    [white setFill];
+    [blue setStroke];
     //画折线
     NSArray *lines = @[[NSValue valueWithCGPoint:CGPointMake(200, 400)],
                        [NSValue valueWithCGPoint:CGPointMake(220, 380)],
