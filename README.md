@@ -1,8 +1,8 @@
 ZXQuartz
 ========
 
-ZXQuartz
-
+* draw graph
+* comvert UIVIew to UIImage
 
 ![screen](http://zxapi.sinaapp.com/image_library/quartz2.jpg)
 ![bar](http://zxapi.sinaapp.com/image_library/bar.jpg)
