@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+ZXQuartz.h"
 
 @interface UIView (ZXQuartz)
+
+//tools
+-(UIImage *)getImage;
 
 
 

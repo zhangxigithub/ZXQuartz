@@ -26,9 +26,9 @@
     Canvas *canvas = [[Canvas alloc] initWithFrame:self.viewController.view.bounds];
     [self.viewController.view addSubview:canvas];
     
-    
-    
-    
+    //保存为图片
+    NSData *data = UIImageJPEGRepresentation([canvas getImage], 1);
+    [data writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/pic.jpg"] atomically:YES];
     
     return YES;
 }

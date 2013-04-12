@@ -7,7 +7,7 @@
 //
 
 #import "Canvas.h"
-#import "UIView+ZXQuartz.h"
+
 
 @implementation Canvas
 

@@ -7,10 +7,19 @@
 //
 
 #define PI 3.1415926
-
-#import "UIView+ZXQuartz.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UIView (ZXQuartz)
+
+//tools
+-(UIImage *)getImage
+{
+    UIGraphicsBeginImageContext(self.frame.size);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 
 //矩形
