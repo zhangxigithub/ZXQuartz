@@ -4,7 +4,7 @@ ZXQuartz
 ZXQuartz
 
 
-![screen](http://zxapi.sinaapp.com/image_library/quartz.jpg)
+![screen](http://zxapi.sinaapp.com/image_library/quartz2.jpg)
 ![bar](http://zxapi.sinaapp.com/image_library/bar.jpg)
 
 ``` objective-c
