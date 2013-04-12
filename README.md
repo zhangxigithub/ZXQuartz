@@ -5,6 +5,7 @@ ZXQuartz
 
 
 ![screen](http://zxapi.sinaapp.com/image_library/quartz.jpg)
+![bar](http://zxapi.sinaapp.com/image_library/bar.jpg)
 
 ``` objective-c
 //矩形

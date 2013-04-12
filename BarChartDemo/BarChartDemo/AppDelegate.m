@@ -14,17 +14,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor colorWithRed:235.0/255.0
+                                                  green:245.0/255.0
+                                                   blue:231.0/255.0
+                                                  alpha:1];
     
     
     //--
+    
+    NSArray *values = @[@20,@12,@28,@20,@15];
+    
     BarChart *barChart = [[BarChart alloc] initWithFrame:CGRectMake(0, 100, 320, 180)
-                                                  values:@[@20,@12,@28,@20,@15]];
+                                                  values:values];
     [self.window addSubview:barChart];
-    barChart.barColor  = [UIColor colorWithRed:0.501
-                                         green:0.627
-                                          blue:0.871
-                                         alpha:1];
+    barChart.barColor  = [UIColor colorWithRed:176.0/255.0
+                                        green:212.0/255.0
+                                         blue:131.0/255.0
+                                        alpha:1];
     //--
     
 
