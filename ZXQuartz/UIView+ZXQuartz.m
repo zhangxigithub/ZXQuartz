@@ -58,10 +58,14 @@
     CGPoint  startPoint      = [startPointValue CGPointValue];
     CGContextMoveToPoint(context, startPoint.x, startPoint.y);
     
-    for(int i = 1;i<pointArray.count;i++)
+    for (int i = 1; i <= pointArray.count; i++)
     {
-        NSAssert([[pointArray[i] class] isSubclassOfClass:[NSValue class]], @"数组成员必须是CGPoint组成的NSValue");
-        NSValue *pointValue = pointArray[i];
+        int index = i;
+        if (index == pointArray.count) {
+            index = 0;
+        }
+        NSAssert([[pointArray[index] class] isSubclassOfClass:[NSValue class]], @"数组成员必须是CGPoint组成的NSValue");
+        NSValue *pointValue = pointArray[index];
         CGPoint  point      = [pointValue CGPointValue];
         CGContextAddLineToPoint(context, point.x,point.y);
     }
